@@ -1,4 +1,5 @@
 import logo from "../assets/spacex-logo.png";
+import Link from "./Link";
 
 const Header: React.FC = () => {
   return (
@@ -7,30 +8,10 @@ const Header: React.FC = () => {
       <nav className="flex gap-4">
         {/* to do: melhorar a chamada */}
         Launches:
-        <a
-          className="text-blue-600 hover:text-blue-800 hover:underline"
-          href="#"
-        >
-          Next
-        </a>
-        <a
-          className="text-blue-600 hover:text-blue-800 hover:underline"
-          href="#"
-        >
-          Last
-        </a>
-        <a
-          className="text-blue-600 hover:text-blue-800 hover:underline"
-          href="#"
-        >
-          Upcoming
-        </a>
-        <a
-          className="text-blue-600 hover:text-blue-800 hover:underline"
-          href="#"
-        >
-          Past
-        </a>
+        <Link href="#">Next</Link>
+        <Link href="#">Last</Link>
+        <Link href="#">Upcoming</Link>
+        <Link href="#">Past</Link>
       </nav>
     </header>
   );
