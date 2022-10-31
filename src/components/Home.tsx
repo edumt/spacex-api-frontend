@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 const Home: React.FC = () => {
   return (
     <div className="h-full text-white">
@@ -10,15 +12,33 @@ const Home: React.FC = () => {
         </div>
       </section>
       <div className="flex flex-col items-center gap-5 p-4">
-        Launches
-        <div className="grid justify-center gap-5 sm:grid-cols-1 md:grid-cols-2">
-          <div className="h-80 w-80 border">card 1: Next</div>
-          <div className="h-80 w-80 border">card 2: Last</div>
-          <div className="h-80 w-80 border">card 3: Upcoming</div>
-          <div className="h-80 w-80 border">card 4: Past</div>
+        <h2 className="my-6 text-5xl">Launches</h2>
+        <div className="my-4 grid justify-center gap-5 sm:grid-cols-1 md:grid-cols-2">
+          <Card variant="next">Next</Card>
+          <Card variant="last">Last</Card>
+          <Card variant="upcoming">Upcoming</Card>
+          <Card variant="past">Past</Card>
         </div>
       </div>
     </div>
+  );
+};
+
+interface CardProps {
+  children: ReactNode;
+  variant: "next" | "last" | "upcoming" | "past";
+}
+const Card: React.FC<CardProps> = ({ children, variant }) => {
+  return (
+    <a
+      className="h-80 w-80 rounded bg-cover bg-center bg-no-repeat transition hover:scale-105"
+      style={{ backgroundImage: `url('/images/${variant}.jpg'` }}
+      href="#"
+    >
+      <h3 className="flex h-full w-full items-center justify-center bg-black/40 text-3xl transition hover:bg-black/20">
+        {children}
+      </h3>
+    </a>
   );
 };
 
