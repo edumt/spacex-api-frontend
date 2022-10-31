@@ -1,6 +1,6 @@
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import RelatedLinks from "./layout/RelatedLinks";
 
 function App() {
