@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+import Card from "./Card";
+import Link from "./Link";
+import NavCol from "./NavCol";
 
 const Home: React.FC = () => {
   return (
@@ -12,33 +14,38 @@ const Home: React.FC = () => {
         </div>
       </section>
       <div className="flex flex-col items-center gap-5 p-4">
-        <h2 className="my-6 text-5xl">Launches</h2>
-        <div className="my-4 grid justify-center gap-5 sm:grid-cols-1 md:grid-cols-2">
+        <h2 className="my-2 text-5xl">Launches</h2>
+        <div className="my-10 grid justify-center gap-5 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           <Card variant="next">Next</Card>
           <Card variant="last">Last</Card>
           <Card variant="upcoming">Upcoming</Card>
           <Card variant="past">Past</Card>
         </div>
       </div>
+      <aside className="hidden items-center justify-evenly bg-black/50 p-6 lg:flex">
+        <NavCol title="HOME">
+          <Link href="#">Lorem</Link>
+          <Link href="#">Ipsum</Link>
+          <Link href="#">Dolor</Link>
+        </NavCol>
+        <NavCol title="ABOUT US">
+          <Link href="#">Lorem</Link>
+          <Link href="#">Ipsum</Link>
+          <Link href="#">Dolor</Link>
+        </NavCol>
+        <NavCol title="RESOURCES">
+          <Link href="#">Lorem</Link>
+          <Link href="#">Ipsum</Link>
+          <Link href="#">Dolor</Link>
+        </NavCol>
+        <NavCol title="INFO">
+          <span className="w-80">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in
+            lorem nisl. Ut dapibus elementum eros in vulputate.
+          </span>
+        </NavCol>
+      </aside>
     </div>
-  );
-};
-
-interface CardProps {
-  children: ReactNode;
-  variant: "next" | "last" | "upcoming" | "past";
-}
-const Card: React.FC<CardProps> = ({ children, variant }) => {
-  return (
-    <a
-      className="h-80 w-80 rounded bg-cover bg-center bg-no-repeat transition hover:scale-105"
-      style={{ backgroundImage: `url('/images/${variant}.jpg'` }}
-      href="#"
-    >
-      <h3 className="flex h-full w-full items-center justify-center bg-black/40 text-3xl transition hover:bg-black/20">
-        {children}
-      </h3>
-    </a>
   );
 };
 
