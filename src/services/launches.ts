@@ -4,8 +4,16 @@ import axios from "axios";
 
 export const getLaunchById = (id: string) => {
   return async () => {
-    const { data } = await axios.get(
-      `https://api.spacexdata.com/v4/launches/${id}`
+    const { data } = await axios.post(
+      `https://api.spacexdata.com/v4/launches/query`,
+      {
+        query: {
+          _id: id,
+        },
+        options: {
+          populate: ["payloads", "rocket", "crew", "launchpad"],
+        },
+      }
     );
     return data;
   };
