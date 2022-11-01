@@ -3,7 +3,7 @@ import NavCol from "../components/NavCol";
 
 const RelatedLinks = () => {
   return (
-    <aside className="hidden items-center justify-evenly bg-black/50 p-6 text-white lg:flex">
+    <aside className="hidden items-center justify-evenly bg-black/50 p-6 text-white md:flex">
       <NavCol title="HOME">
         <Link href="#">Lorem</Link>
         <Link href="#">Ipsum</Link>
