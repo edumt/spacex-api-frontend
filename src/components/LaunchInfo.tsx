@@ -30,12 +30,12 @@ const LaunchInfo = () => {
         <h2 className="mb-2 text-4xl">Rocket:</h2>
         <p>{launch.rocket.name}</p>
         <p>{launch.rocket.company}</p>
+        <div className="my-4 flex w-full flex-wrap">
+          {launch.rocket.flickr_images.map((img: string) => (
+            <img className="mx-auto w-1/2 md:w-1/3" src={img} key={img} />
+          ))}
+        </div>
         <p>{launch.rocket.description}</p>
-      </div>
-      <div className="flex w-full flex-wrap">
-        {launch.rocket.flickr_images.map((img: string) => (
-          <img className="mx-auto w-1/2 md:w-1/3" src={img} key={img} />
-        ))}
       </div>
       <div>
         <Link href={launch.rocket.wikipedia} target="_blank">
@@ -47,12 +47,12 @@ const LaunchInfo = () => {
         <p>
           {launch.launchpad.name}, {launch.launchpad.region}
         </p>
+        <div className="my-4 flex w-full flex-wrap">
+          {launch.launchpad.images?.large.map((img: string) => (
+            <img src={img} key={img} />
+          ))}
+        </div>
         <p>{launch.launchpad.details}</p>
-      </div>
-      <div className="flex w-full flex-wrap">
-        {launch.launchpad.images?.large.map((img: string) => (
-          <img src={img} key={img} />
-        ))}
       </div>
     </div>
   );
