@@ -45,7 +45,7 @@ export const getLastLaunch = async () => {
     {
       query: {
         date_utc: {
-          $gte: new Date().toISOString(),
+          $lte: new Date().toISOString(),
         },
       },
       options: {
