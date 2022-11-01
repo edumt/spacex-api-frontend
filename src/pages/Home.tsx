@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import LinkCard from "../components/LinkCard";
 
 const Home: React.FC = () => {
   return (
@@ -14,10 +14,10 @@ const Home: React.FC = () => {
       <div className="flex flex-col items-center gap-5 p-4">
         <h2 className="my-2 text-5xl">Launches</h2>
         <div className="my-10 grid justify-center gap-5 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-          <Card variant="next">Next</Card>
-          <Card variant="last">Last</Card>
-          <Card variant="upcoming">Upcoming</Card>
-          <Card variant="past">Past</Card>
+          <LinkCard variant="next">Next</LinkCard>
+          <LinkCard variant="last">Last</LinkCard>
+          <LinkCard variant="upcoming">Upcoming</LinkCard>
+          <LinkCard variant="past">Past</LinkCard>
         </div>
       </div>
     </div>

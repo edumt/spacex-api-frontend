@@ -6,7 +6,7 @@ interface CardProps {
   variant: "next" | "last" | "upcoming" | "past";
 }
 
-const Card: React.FC<CardProps> = ({ children, variant }) => {
+const LinkCard: React.FC<CardProps> = ({ children, variant }) => {
   return (
     <Link
       className="h-80 w-80 rounded bg-cover bg-center bg-no-repeat transition hover:scale-105"
@@ -20,4 +20,4 @@ const Card: React.FC<CardProps> = ({ children, variant }) => {
   );
 };
 
-export default Card;
+export default LinkCard;
