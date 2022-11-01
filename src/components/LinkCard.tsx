@@ -9,7 +9,7 @@ interface CardProps {
 const LinkCard: React.FC<CardProps> = ({ children, variant }) => {
   return (
     <Link
-      className="h-80 w-80 rounded bg-cover bg-center bg-no-repeat transition hover:scale-105"
+      className="h-80 w-80 rounded bg-cover bg-center bg-no-repeat shadow-xl transition hover:scale-105"
       style={{ backgroundImage: `url('/images/${variant}.jpg'` }}
       to={variant}
     >
