@@ -20,7 +20,7 @@ const LaunchInfo = () => {
   const launch = data.docs[0];
 
   return (
-    <div className="my-4 mx-auto flex max-w-2xl flex-col items-center justify-center gap-4 bg-black/80 text-center text-2xl text-white">
+    <div className="my-4 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 bg-black/80 text-center text-2xl text-white">
       <div>
         <h2 className="mb-2 text-4xl">Launch:</h2>
         <p>{launch.name}</p>
@@ -34,7 +34,7 @@ const LaunchInfo = () => {
       </div>
       <div className="flex w-full flex-wrap">
         {launch.rocket.flickr_images.map((img: string) => (
-          <img className="w-1/2" src={img} key={img} />
+          <img className="mx-auto w-1/2 md:w-1/3" src={img} key={img} />
         ))}
       </div>
       <div>
