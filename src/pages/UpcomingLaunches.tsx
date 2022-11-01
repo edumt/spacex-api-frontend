@@ -7,7 +7,7 @@ const UpcomingLaunches: React.FC = () => {
     data: launches,
     isLoading,
     isError,
-  } = useQuery(["next"], getUpcomingLaunches);
+  } = useQuery(["upcoming"], getUpcomingLaunches);
 
   if (isLoading) return <div>loading...</div>;
   if (isError) return <div>Error</div>;
