@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
-import { getNextLaunch } from "../services/launches";
+import { getNextLaunchId } from "../services/launches";
 
 const NextLaunch: React.FC = () => {
   const {
     data: launch,
     isLoading,
     isError,
-  } = useQuery(["next"], getNextLaunch);
+  } = useQuery(["next"], getNextLaunchId);
 
   if (isLoading) return <div className="h-screen">loading...</div>;
   if (isError) return <div className="h-screen">Error</div>;
