@@ -27,7 +27,7 @@ const Launches: React.FC<Props> = ({ launches }) => {
     return (
       <Link
         to={`/launches/${launch.id}`}
-        className="m-8 mx-auto grid h-96 w-2/3 max-w-2xl grid-cols-1 grid-rows-2 overflow-hidden rounded bg-black/80 transition hover:scale-105 md:h-48  md:w-full md:grid-cols-3 md:grid-rows-1"
+        className="m-8 mx-auto grid h-96 w-4/5 max-w-2xl grid-cols-1 grid-rows-2 overflow-hidden rounded bg-black/80 text-center transition hover:scale-105 md:h-48  md:w-full md:grid-cols-3 md:grid-rows-1"
         key={launch.id}
       >
         <div className="col-span-1 h-full">
