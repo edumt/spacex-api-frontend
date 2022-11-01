@@ -3,6 +3,7 @@ import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import RelatedLinks from "./layout/RelatedLinks";
 import Home from "./pages/Home";
+import UpcomingLaunches from "./pages/UpcomingLaunches";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/*" element={<Home />} />
+        <Route path="/upcoming" element={<UpcomingLaunches />} />
       </Routes>
       <RelatedLinks />
       <Footer />
