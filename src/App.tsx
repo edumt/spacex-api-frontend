@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import LaunchInfo from "./components/LaunchInfo";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import RelatedLinks from "./layout/RelatedLinks";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/last" element={<LastLaunch />} />
         <Route path="/upcoming" element={<UpcomingLaunches />} />
         <Route path="/past" element={<PastLaunches />} />
+        <Route path="/launches/:id" element={<LaunchInfo />} />
         <Route path="/*" element={<Home />} />
       </Routes>
       <RelatedLinks />

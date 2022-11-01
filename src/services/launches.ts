@@ -2,6 +2,15 @@ import axios from "axios";
 
 // to do: update all URLs to back-end
 
+export const getLaunchById = (id: string) => {
+  return async () => {
+    const { data } = await axios.get(
+      `https://api.spacexdata.com/v4/launches/${id}`
+    );
+    return data;
+  };
+};
+
 export const getNextLaunch = async () => {
   const { data } = await axios.post(
     "https://api.spacexdata.com/v4/launches/query",
