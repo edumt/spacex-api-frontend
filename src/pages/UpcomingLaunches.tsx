@@ -15,7 +15,7 @@ const UpcomingLaunches: React.FC = () => {
   return (
     <div>
       {launches.docs.map((launch: Launch) => (
-        <LaunchCard launch={launch} />
+        <LaunchCard launch={launch} key={launch.id} />
       ))}
     </div>
   );
