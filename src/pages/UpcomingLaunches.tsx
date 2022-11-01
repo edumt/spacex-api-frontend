@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import Launches from "../components/Launches";
+import LaunchCard, { Launch } from "../components/LaunchCard";
 import { getUpcomingLaunches } from "../services/launches";
 
 const UpcomingLaunches: React.FC = () => {
@@ -9,10 +9,16 @@ const UpcomingLaunches: React.FC = () => {
     isError,
   } = useQuery(["upcoming"], getUpcomingLaunches);
 
-  if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>Error</div>;
+  if (isLoading) return <div className="h-screen">loading...</div>;
+  if (isError) return <div className="h-screen">Error</div>;
 
-  return <Launches launches={launches.docs} />;
+  return (
+    <div>
+      {launches.docs.map((launch: Launch) => (
+        <LaunchCard launch={launch} />
+      ))}
+    </div>
+  );
 };
 
 export default UpcomingLaunches;
