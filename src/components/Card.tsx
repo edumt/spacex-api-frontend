@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 interface CardProps {
   children: ReactNode;
@@ -7,15 +8,15 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ children, variant }) => {
   return (
-    <a
+    <Link
       className="h-80 w-80 rounded bg-cover bg-center bg-no-repeat transition hover:scale-105"
       style={{ backgroundImage: `url('/images/${variant}.jpg'` }}
-      href="#"
+      to={variant}
     >
       <h3 className="flex h-full w-full items-center justify-center bg-black/40 text-3xl transition hover:bg-black/20">
         {children}
       </h3>
-    </a>
+    </Link>
   );
 };
 

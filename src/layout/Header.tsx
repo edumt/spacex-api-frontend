@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/spacex-logo.png";
 
 const Header: React.FC = () => {
   return (
     <header className="mx-auto py-4 px-8 brightness-125">
-      <a href="/">
+      <Link to="/">
         <img src={logo} className="h-8" alt="SpaceX Logo" />
-      </a>
+      </Link>
     </header>
   );
 };
